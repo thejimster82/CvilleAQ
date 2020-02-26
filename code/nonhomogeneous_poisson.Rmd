@@ -1,0 +1,39 @@
+<!--- Below are global settings for knitr. You can override any of them by adding the changes to individual chunks --->
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(error=TRUE,        # Keep compiling upon error
+                      collapse=FALSE,    # collapse by default
+                      echo=TRUE,         # echo code by default
+                      comment = "#>",    # change comment character
+                      fig.width = 5,     # set figure width
+                      fig.align = "center",# set figure position
+                      out.width = "49%", # set width of displayed images
+                      warning=FALSE,     # do not show R warnings
+                      message=FALSE)     # do not show R messages
+```
+
+<!--- Solution Region --->
+<style>
+#solution {
+  background-color: #8FBC8F;
+  border-style: solid;
+  border-color: blue;
+  padding: .5em;
+  margin: 20px
+}
+</style>
+
+
+<!--- Load Required R packages here --->
+```{r, include=FALSE}
+library(tidyverse)
+library(igraph)      # note the conflicts: simplify(), groups()
+library(NHPoisson)
+```
+
+```{r}
+pm <- read.csv(file="C://Users//Jim//GITPROJECTS//Smart_Cville_Capstone_2020//code//pmData.csv", header=TRUE, sep=",")
+# get just pm25 for dev box 3
+pm_dev3_pm25 <- select(filter(pm, dev_id == 3),c(pm25))
+pm_dev3_pm25
+```
