@@ -56,3 +56,5 @@ dfAnom$km_anomaly = as.integer(eucDists >= threshold)
 
 fig <- plot_ly(dfAnom, x = ~Temperature, y = ~Dew.Point, z = ~Speed, color = ~km_anomaly, colors = c('green', 'red'))
 fig
+
+
