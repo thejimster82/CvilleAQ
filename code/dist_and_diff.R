@@ -1,9 +1,8 @@
 library(geosphere)
 
-#Working directory = /data
+#Set working directory to /data
 
 pre_df <- read.csv("pre_means.csv")
-
 post_df <- read.csv("post_means.csv")
 
 for (i in 1:length(pre_df[,1])){
@@ -58,4 +57,5 @@ for (i in 1:length(pre_df[,1])){
   pm10_post = post_df[i,]$pm10
   difference_df[i,]$pm10_diff <- pm10_post - pm10_pre
 }
+
 
