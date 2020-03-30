@@ -59,5 +59,3 @@ for (i in 1:length(pre_df[,1])){
   difference_df[i,]$pm10_diff <- pm10_post - pm10_pre
 }
 
-#
-

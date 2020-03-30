@@ -7,10 +7,11 @@ library(raster)
 library(sp)
 
 ### SET WORKING DIRECTORY TO /data/tl_2019_51540_faces
-
-df <- read.csv("pre_means.csv")
-df2 <- df
-data = df[,4:6]
+setwd("./data/tl_2019_51540_faces")
+df_pre <- read.csv("pre_means.csv")
+df_post <- read.csv("post_means.csv")
+data_pre = df_pre[,4:6]
+data_post = df_post[,4:6]
 shape <- readOGR("tl_2019_51540_faces.shp")
 shp = shape@polygons
 shp = SpatialPolygons(shp, proj4string=CRS("+proj=utm +ellps=WGS84 +datum=WGS84"))
@@ -31,7 +32,8 @@ extractCoords <- function(sp.df)
 
 a = extractCoords(shp)
 
-coordinates(df) <- ~ longitude + latitude
+coordinates(df_pre) <- ~ longitude + latitude
+coordinates(df_post) <- ~ longitude + latitude
 
 #proj4string(df) <- CRS("+init=epsg:4326")
 
@@ -39,18 +41,43 @@ coordinates(df) <- ~ longitude + latitude
 #r <- rasterToPoints(raster(ext, resolution = 30), spatial = TRUE)
 #proj4string(r) <- proj4string(df)  
 
-spdf = SpatialPointsDataFrame(df@coords, data)
+spdf_pre = SpatialPointsDataFrame(df_pre@coords, data_pre)
+spdf_post = SpatialPointsDataFrame(df_post@coords, data_post)
 
-spdf@data
+spdf_pre@data
+spdf_post@data
 
-proj4string(spdf) <- proj4string(r)
+proj4string(spdf_pre) <- proj4string(r)
 
 sp_pts <- SpatialPoints(a)
 
-kriging_pm25 = autoKrige(spdf$pm25~1, spdf, sp_pts, model = "Exp")
+#plotting co2 pre and post
 
-plot(kriging_pm25)
+kriging_co2_pre = autoKrige(spdf_pre$co2~1, spdf_pre, sp_pts, model = "Exp")
 
-kriging_pm10 = autoKrige(spdf$pm10~1, spdf, sp_pts, model = "Exp")
+plot(kriging_co2_pre)
 
-plot(kriging_pm10)
+kriging_co2_post = autoKrige(spdf_post$co2~1, spdf_post, sp_pts, model = "Exp")
+
+plot(kriging_co2_post)
+
+#plotting pm25 pre and post
+
+kriging_pm25_pre = autoKrige(spdf_pre$pm25~1, spdf_pre, sp_pts, model = "Exp")
+
+plot(kriging_pm25_pre)
+
+kriging_pm25_post = autoKrige(spdf_post$pm25~1, spdf_post, sp_pts, model = "Exp")
+
+plot(kriging_pm25_post)
+
+#plotting pm10 pre and post
+
+kriging_pm10_pre = autoKrige(spdf_pre$pm10~1, spdf_pre, sp_pts, model = "Exp")
+
+plot(kriging_pm10_pre)
+
+kriging_pm10_post = autoKrige(spdf_post$pm10~1, spdf_post, sp_pts, model = "Exp")
+
+plot(kriging_pm10_post)
+
