@@ -1,0 +1,19 @@
+OK,type,latitude,longitude,altitude (m),uid,status,alert?,hardware_address,gateway
+sbox-test0,indoor,0,0,10,SDS,,,,
+sbox-test1,indoor,0,0,10,SDS,,,,
+sbox-test2,indoor,0,0,10,SDS,,,,
+sbox0,indoor,0,0,10,SDS,,,,
+sbox1,indoor,0,0,10,SDS,,,,
+,,,,,,,,,
+sbox2,outdoor,38.026,-78.501,10,Kevin,"OK
+",,00AA6EC9E1F94151,sds-gateway-i1
+sbox3,"outdoor
+",38.019983,-78.473602,3,Lucas,OK,,00D041ABAAD3D8EE,
+sbox4,outdoor,38.04745,-78.48303,1,Angela,OK,,007E6204C3EBDA1A,tomorrow-today
+sbox5,outdoor,38.03562,-78.4919011,1,Eli,OK,,00C77602D0D14B5B,a-school-02
+sbox6,outdoor,38.02758,-78.515191,10,Alex,confirm altitude,,0046CA69612BDBF0,sds-jimmy
+sbox7,outdoor,38.02557,-78.51661,1,Lane,OK,,00B4DCFDEE164ABC,
+sbox8,outdoor,38.029883,-78.484047,10,LF-bkp,OK,,003441569A1C1C26,sds-gateway-1
+sbox9,outdoor,38.025759,-78.469295,20,Jon,OK,,00B52B4D33EC6615,a-school-01
+sbox10,outdoor,38.030613,-78.479057,10,CCI,OK,,0031AA4880A10DB5,cci
+sbox11,outdoor,38.029883,-78.484047,10,LF,OK,,006A2871A41B79F0,sds-gateway-1
