@@ -3,12 +3,13 @@ library(geosphere)
 #Set working directory to /data
 
 pre_df <- read.csv("pre_means.csv")
+
 post_df <- read.csv("post_means.csv")
 
+#making box numbers correspond to indices - note they do not reference sbox number
 for (i in 1:length(pre_df[,1])){
   pre_df[i,]$X = i
 }
-
 for (i in 1:length(post_df[,1])){
   post_df[i,]$X = i
 }
@@ -58,4 +59,5 @@ for (i in 1:length(pre_df[,1])){
   difference_df[i,]$pm10_diff <- pm10_post - pm10_pre
 }
 
+#write.csv(difference_df, "difference.csv", row.names = F)
 
