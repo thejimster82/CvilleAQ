@@ -49,7 +49,6 @@ spdf_diff = SpatialPointsDataFrame(df_post@coords, data_diff)
 
 sp_pts <- SpatialPoints(cds)
 
-#jimmy help me with a better palate i cant see thanks
 colors <- colorRampPalette(c('yellow', 'red'))(8) 
 
 ### CO2 Maps
@@ -72,17 +71,34 @@ automapPlot(kriging_co2_diff$krige_output, zcol="var1.pred", col.regions = color
 ### PM2.5 Maps
 kriging_pm25_pre = autoKrige(spdf_pre$pm25~1, spdf_pre, sp_pts, model = "Exp")
 plot(kriging_pm25_pre)
+automapPlot(kriging_pm25_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 pre-announcement heatmap")
+
+
 kriging_pm25_post = autoKrige(spdf_post$pm25~1, spdf_post, sp_pts, model = "Exp")
 plot(kriging_pm25_post)
+automapPlot(kriging_pm25_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 post-announcement heatmap")
+
+
+colors_pm25_diff <- colorRampPalette(c('light green', 'red'))(8) 
 kriging_pm25_diff = autoKrige(spdf_diff$pm2_5_diff~1, spdf_diff, sp_pts, model = "Exp")
 plot(kriging_pm25_diff)
+automapPlot(kriging_pm25_diff$krige_output, zcol="var1.pred", col.regions = colors_pm25_diff, main = "PM2.5 change from before announcement")
+
 
 ### PM10 Maps
 kriging_pm10_pre = autoKrige(spdf_pre$pm10~1, spdf_pre, sp_pts, model = "Exp")
 plot(kriging_pm10_pre)
+automapPlot(kriging_pm10_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "PM10 pre-announcement heatmap")
+
+
 kriging_pm10_post = autoKrige(spdf_post$pm10~1, spdf_post, sp_pts, model = "Exp")
-plot(kriging_pm25_post)
+plot(kriging_pm10_post)
+automapPlot(kriging_pm10_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM10 post-announcement heatmap")
+
+
+colors_pm10_diff <- colorRampPalette(c('light green', 'red'))(8)
 kriging_pm10_diff = autoKrige(spdf_diff$pm10_diff~1, spdf_diff, sp_pts, model = "Exp")
-plot(kriging_pm25_diff)
+plot(kriging_pm10_diff)
+automapPlot(kriging_pm10_diff$krige_output, zcol="var1.pred", col.regions = colors_pm10_diff, main = "PM10 change from before announcement")
 
 
