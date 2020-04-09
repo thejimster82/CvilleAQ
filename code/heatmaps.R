@@ -54,29 +54,28 @@ colors <- colorRampPalette(c('blue', 'green', 'red'))(10)
 ### CO2 Maps
 kriging_co2_pre = autoKrige(spdf_pre$co2~1, spdf_pre, sp_pts, model = "Exp")
 plot(kriging_co2_pre, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_co2_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "CO2 pre-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_co2_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "CO2 pre-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 
 kriging_co2_post = autoKrige(spdf_post$co2~1, spdf_post, sp_pts, model = "Exp")
 plot(kriging_co2_post, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_co2_post$krige_output, zcol="var1.pred", col.regions = colors, main = "CO2 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_co2_post$krige_output, zcol="var1.pred", col.regions = colors, main = "CO2 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 
 colors_co2_diff <- colorRampPalette(c('dark green', 'light green'))(8) 
 kriging_co2_diff = autoKrige(spdf_diff$co2_diff~1, spdf_diff, sp_pts, model = "Exp")
 plot(kriging_co2_diff, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_co2_diff$krige_output, zcol="var1.pred", col.regions = colors_co2_diff, main = "CO2 change from before announcement", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
-
+automapPlot(kriging_co2_diff$krige_output, zcol="var1.pred", col.regions = colors_co2_diff, main = "CO2 change from before announcement", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 ### PM2.5 Maps
 kriging_pm25_pre = autoKrige(spdf_pre$pm25~1, spdf_pre, sp_pts, model = "Exp")
 plot(kriging_pm25_pre, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_pm25_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 pre-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_pm25_pre$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 pre-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 
 kriging_pm25_post = autoKrige(spdf_post$pm25~1, spdf_post, sp_pts, model = "Exp")
 plot(kriging_pm25_post, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_pm25_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_pm25_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 
 kriging_pm25_diff = autoKrige(spdf_diff$pm2_5_diff~1, spdf_diff, sp_pts, model = "Exp")
