@@ -2,6 +2,8 @@ library(geosphere)
 
 #Set working directory to /data
 
+
+
 pre_df <- read.csv("pre_means.csv")
 
 post_df <- read.csv("post_means.csv")

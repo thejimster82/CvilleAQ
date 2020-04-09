@@ -49,7 +49,7 @@ spdf_diff = SpatialPointsDataFrame(df_post@coords, data_diff)
 
 sp_pts <- SpatialPoints(cds)
 
-colors <- colorRampPalette(c('yellow', 'red'))(8) 
+colors <- colorRampPalette(c('blue', 'green', 'red'))(10) 
 
 ### CO2 Maps
 kriging_co2_pre = autoKrige(spdf_pre$co2~1, spdf_pre, sp_pts, model = "Exp")
@@ -79,10 +79,9 @@ plot(kriging_pm25_post, sp.layout =  list(pts = list("sp.points", df_pre)))
 automapPlot(kriging_pm25_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
 
 
-colors_pm25_diff <- colorRampPalette(c('light green', 'red'))(8) 
 kriging_pm25_diff = autoKrige(spdf_diff$pm2_5_diff~1, spdf_diff, sp_pts, model = "Exp")
 plot(kriging_pm25_diff, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_pm25_diff$krige_output, zcol="var1.pred", col.regions = colors_pm25_diff, main = "PM2.5 change from before announcement", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_pm25_diff$krige_output, zcol="var1.pred", col.regions = colors, main = "PM2.5 change from before announcement", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape, pts=list("sp.points", df_pre, col = "white", pch = 18, cex = 1)))
 
 
 ### PM10 Maps
@@ -96,9 +95,11 @@ plot(kriging_pm10_post, sp.layout =  list(pts = list("sp.points", df_pre)))
 automapPlot(kriging_pm10_post$krige_output, zcol="var1.pred", col.regions = colors, main = "PM10 post-announcement heatmap", sp.layout =  list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
 
 
-colors_pm10_diff <- colorRampPalette(c('light green', 'red'))(8)
 kriging_pm10_diff = autoKrige(spdf_diff$pm10_diff~1, spdf_diff, sp_pts, model = "Exp")
 plot(kriging_pm10_diff, sp.layout =  list(pts = list("sp.points", df_pre)))
-automapPlot(kriging_pm10_diff$krige_output, zcol="var1.pred", col.regions = colors_pm10_diff, main = "PM10 change from before announcement", sp.layout = list(pts = list("sp.points", df_pre, col = "black", pch = 18, cex = 1.5), shape))
+automapPlot(kriging_pm10_diff$krige_output, zcol="var1.pred", col.regions = colors, main = "PM10 change from before announcement", sp.layout = list(pts = list("sp.points", df_pre, pch = 18, col="black", cex = 1.6), shape))
 
-
+#blue to green to red
+# add geo coords on axes
+# shapefile of greater charlottesville
+# another breakpoint for Northam's order?
