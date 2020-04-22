@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-title: [The Deployment of a LoRaWAN-Based IoT Air Quality Sensor Network for Public Good]
-description: [A University of Virginia School of Data Science research project in aiming to implement a network of air quality sensors in collaboration with the local community as a means to facilitate discussion about and to quantitatively analyze the air we breathe.]
-logo: [logo.jpg]
-show_downloads: [true]
+title: "The Deployment of a LoRaWAN-Based IoT Air Quality Sensor Network for Public Good"
+description: "A University of Virginia School of Data Science research project in aiming to implement a network of air quality sensors in collaboration with the local community as a means to facilitate discussion about and to quantitatively analyze the air we breathe."
+logo: "logo.jpg"
+show_downloads: true
