@@ -62,7 +62,7 @@ All of the data collected for this project can be downloaded and visualized at t
 
 ## Grafana
 
-Grafana provides realtime timeseries plots of our data and allows csv downloads.
+Grafana provides realtime timeseries plots of our data and allows csv downloads. You can access the full site [here](https://sensors.unixjazz.org/d/xUrC1m8Zz/sbox-all?from=now-7d&to=now&orgId=1).
 
 <iframe src="https://sensors.unixjazz.org/d-solo/xUrC1m8Zz/sbox-all?from=1587077252684&to=1587682052684&orgId=1&theme=light&panelId=4" width="450" height="200" frameborder="0"></iframe>
 <iframe src="https://sensors.unixjazz.org/d-solo/xUrC1m8Zz/sbox-all?from=1587077272477&to=1587682072478&orgId=1&theme=light&panelId=6" width="450" height="200" frameborder="0"></iframe>
