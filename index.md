@@ -4,6 +4,10 @@ layout: default
 
 ![IoT For Public Good](/assets/img/IoT.png)
 
+View the full paper on [IEEExplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
+
+_This link will be updated when the official paper is published_
+
 # Overview
 
 ---
@@ -39,7 +43,7 @@ This MCU comes in a small form-factor, allows us to provide both 3.3v and 5v sou
 
 ### [Plantower PMS7003](sensorboxes/hardware/datasheets/pms7003-datasheet.pdf)
 
-![Plantower PMS7003](/assets/img/sensors/pms7003-front-view.png)
+![Plantower PMS7003](/assets/img/sensors/pms7003.png)
 
 The PMS7003 is a state-of-the-art particulate matter (PM) sensor, sensing PM 1.0, 2.5, and 10. Its small form-factor, low power-consumption, and high accuracy make it a great choice for our sensor kits. It does not come with US-standard pins so you will need [an adapter](https://kamami.pl/en/other-connectors/564553-adapter-from-127mm-pitch-to-254mm-for-pms7003.html) to standardize the pins.
 
@@ -86,6 +90,36 @@ Our API is currently in the works and will make our data machine-readable.
 # Analysis
 
 ---
+
+Find the code for the below analyses in the [notebooks](https://github.com/thejimster82/CvilleAQ/tree/master/notebooks) folder of our Github repo. For these analyses, we used data collected from our 10-sensor network between 02/03/2020 and 04/15/2020, totalling 46309 rows with 9 columns: co2, pm25, pm10, temp, humidity, latitude, longitude, dev_id, and fdt(datetime).
+
+## Data Cleaning
+
+Our sensors operate only within certain bounds (these can be found on their respective datasheets) and we know Charlottesville's weather well enough to rule out specific conditions. Beyond this, we knew that sensors that were malfunctioning would report consistent values or linearly-varying values over long periods of time. Using these two considerations, we were able to construct a simple data-cleaning strategy that removes data that is out-of-bounds and that is behaving linearly for an extended period of time. After performing the data removal we were able to visualize which box had issues with which metrics through a heatmap, shown below. From this we can see that most of our boxes had issues with the PMS7003, and a few had issues with the SCD30. This type of visual might allow us to detect particularly problematic boxes in the future and to go into the debugging process with some level of insight as to where the problem lies. We found that ~25% of our incoming readings were invalid and ~50% our rows included at least one invalid reading. Our further analyses remove all rows with **any** invalid metrics.
+
+![invalid data heatmap](assets/img/analysis/invalid.png)
+
+_Percent invalid data by metric and by kit, 'rows' indicates percent of rows that included at least one invalid metric_
+
+## Calibration
+
+Our sensor kits were not placed close enough to reference-grade instruments to perform collocation testing. However, all PMS7003 units are pre-calibrated and [it has been shown](https://www.researchgate.net/publication/327162626_Field_evaluation_of_low-cost_particulate_matter_sensors_in_high-_and_low-concentration_environments) that this procedure succeeds in keeping their readings close to reference instrumentation. Furthermore, [it has been shown](https://link.springer.com/article/10.1007/s42452-019-0630-1) that the coefficient of variation between units is below 10%. We took the EPA's reported PM2.5 data from Charlottesville and compared it to our sensor values and saw that, in aggregate, the difference between their readings fit a normal distribution with mean ~4.3ug/m3 and standard deviation ~2.1ug/m3. We did not adjust our readings for our further analyses as assigning blame for the discrepancies to each individual box was not possible because our boxes and the reference instrument were not collocated.
+
+![PMS7003 Calibration Test](assets/img/analysis/calibration.png)
+
+_Difference in EPA-reported PM2.5 and kit-aggregated PM2.5 averaged per-day_
+
+![PMS7003 Calibration Density](assets/img/analysis/calibration_density.png)
+
+_Density plot of difference in EPA and kit readings with fitted normal distribution_
+
+## Anomaly Detection
+
+After cleaning our data we used an isolation forest on our five metrics: CO2, PM2.5, PM10, temperature, and humidity, to detect which kits were generating the most anomalous behavior. We saw that our eighth kit was generating the most anomalies. After further analysis, we found that this kit was located very close to the train-tracks that run through Charlottesville which could easily cause it to generate behavior very different from our other kits. This kind of analysis might be another method of detecting sensor kits that are behaving oddly, especially in a greatly expanded network where combing through all of the data could take a very long time. In contrast to the earlier data cleaning step, this procedure is not to detect faulty behavior but, instead, notable behavior.
+
+![Anomaly count per sensor kit](assets/img/analysis/anomalies.png)
+
+_Anomaly count per sensor kit_
 
 ## Heatmaps
 
