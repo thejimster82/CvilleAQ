@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![IoT For Public Good](/assets/img/IoT-01.png)
+![IoT For Public Good](/assets/img/IoT.png)
 
 # Overview
 
