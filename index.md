@@ -21,9 +21,6 @@ As a part of the 2019-2020 Masters of Science in Data Science ([MSDS](https://da
 ![LoRa Gateway Distribution](/assets/img/sensors/gatewaydistn.png)
 _LoRa Gateway Distribution in Charlottesville 04/2020_
 
-![User viewing box](/assets/img/meetings/caetano.jpg)
-_Charlottesville Community Climate Collaborative (C3) Director of Climate Policy Caetano inspecting our pilot prototype sensor kit_
-
 # Sensor Kit Assembly
 
 ## Hardware
