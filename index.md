@@ -53,6 +53,8 @@ The PMS7003 is a state-of-the-art particulate matter (PM) sensor, sensing PM 1.0
 
 The SCD30 is an indoor NDIR CO2 sensor with an onboard temperature and humidity sensor. It provides high accuracy readings but consumes more power than is ideal for these applications. Future iterations should focus on reducing the power consumption of this part or replace it with an alternative.
 
+The full parts list for our pilot prototype can be found [here](sensorboxes/sbox0/Pilot_Prototype_Component_List.pdf).
+
 ## Firmware
 
 Our firmware code is freely available on [Github](https://github.com/thejimster82/CvilleAQ/tree/master/sensorboxes/sbox0) along with the requisite libraries. The ttn-credentials.h file will need to be filled out with the credentials for the TTN application to which you wish to send data. The application must also be set up to [decode](https://learn.adafruit.com/the-things-network-for-feather/payload-decoding) the packets sent by the sensor kits, this code can be copied from Decoder.js in our repo.
@@ -64,6 +66,15 @@ Our firmware code is freely available on [Github](https://github.com/thejimster8
 ## Housing Assembly
 
 Our pilot prototype was assembled using plastic containers which we do not recommend for future users. We recommend to use one of our [3D-printed enclosures](https://github.com/thejimster82/CvilleAQ/tree/master/3D-design) instead, they include in-built supports for both the PMS7003 and the SCD30. In the event that you must use a plastic container, we recommend at least printing the supports for the sensors as it makes attaching them to the container much easier.
+
+![Pilot prototype construction](assets/img/kits/construction.jpg)
+_Pilot prototype construction with research assistant Keerthi Radhakrishnan_
+
+![Pilot prototype deployed](assets/img/kits/sensorbox-test-downtown-crop.jpg)
+_Pilot prototypes test deployment_
+
+![Revision 1 assembled](assets/img/kits/scville-hw-kit-assembled2.jpg)
+_Revision 1 assembled_
 
 # Open Data
 
@@ -132,6 +143,21 @@ Along with heatmaps for the change in CO2, we were able to generate general heat
 
 ![Average PM2.5 February 03 to April 15 2020](assets/img/analysis/final_heatmap_pm25.png)
 _Average PM2.5 (ug/m3) February 03 to April 15 2020_
+
+# Community Events
+
+---
+
+Over the course of our project we met with various members of the community to discuss ideas for the design, implementation, and future goals of this project and other similar projects in the Charlottesville community. These discussions were generally organized by our sponsor at Smart Cville, Lucas Ames. He was an indispensable part of the team and really made connecting with the community possible.
+
+![Meeting with C3 and LEAP Environment Groups](assets/img/meetings/environment_meeting.jpg)
+_Meeting with C3 and LEAP Environmental Groups_
+
+![Civic Hack Night with the UVA Architecture School and SDS](assets/img/meetings/hacknight.jpg)
+_Civic Hack Night with the UVA Architecture School and SDS_
+
+![Open Source Environmental Sensing Info Session](assets/img/sensors/caetano.jpg)
+_Community Climate Collaborative (C3) Director of Climate Policy Caetano de Campos Lopes inspecting our pilot prototype sensor kit at an Open Source Environmental Sensing Info Session_
 
 # Related Projects
 
