@@ -2,6 +2,8 @@
 layout: default
 ---
 
+![IoT For Public Good](/assets/img/IoT-01.png)
+
 # Overview
 
 As a part of the 2019-2020 Masters of Science in Data Science ([MSDS](https://datascience.virginia.edu/degrees/msds-degree)) program at the University of Virginia (UVA) School of Data Science (SDS), all students complete a capstone project. Our project was in collaboration with the [UVA Link Lab](https://engineering.virginia.edu/link-lab-0) and a local non-profit, [Smart Cville](https://www.smartcville.com/). Our overarching goal was to implement an air quality sensor network throughout Charlottesville that would provide citizens with access to open data about their air. Together, we established 4 major goals:
