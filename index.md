@@ -6,6 +6,8 @@ layout: default
 
 # Overview
 
+---
+
 As a part of the 2019-2020 Masters of Science in Data Science ([MSDS](https://datascience.virginia.edu/degrees/msds-degree)) program at the University of Virginia (UVA) School of Data Science (SDS), all students complete a capstone project. Our project was in collaboration with the [UVA Link Lab](https://engineering.virginia.edu/link-lab-0) and a local non-profit, [Smart Cville](https://www.smartcville.com/). Our overarching goal was to implement an air quality sensor network throughout Charlottesville that would provide citizens with access to open data about their air. Together, we established 4 major goals:
 
 1. Expand the LoRa network throughout Charlottesville
@@ -15,6 +17,8 @@ As a part of the 2019-2020 Masters of Science in Data Science ([MSDS](https://da
 
 # The LoRa Network
 
+---
+
 ![TTN Gateway](/assets/img/sensors/Gateway.png)
 [LoRa](https://en.wikipedia.org/wiki/LoRa) is a spread-spectrum modulation technique that allows low density data to be transmitted over long distances using low power. Our collaborators had already begun implementing the LoRa network throughout Charlottesville by distributing The Things Network ([TTN](https://www.thethingsnetwork.org/)) Gateways. These provide up to 10km radius of LoRa coverage and connect to standard WiFi or ethernet to transport packets to the internet.
 
@@ -22,6 +26,8 @@ As a part of the 2019-2020 Masters of Science in Data Science ([MSDS](https://da
 _LoRa Gateway Distribution in Charlottesville 04/2020_
 
 # Sensor Kit Assembly
+
+---
 
 ## Hardware
 
@@ -57,6 +63,8 @@ Our pilot prototype was assembled using plastic containers which we do not recom
 
 # Open Data
 
+---
+
 All of the data collected for this project can be downloaded and visualized at the following locations:
 
 ## Grafana
@@ -77,6 +85,8 @@ Our API is currently in the works and will make our data machine-readable.
 
 # Analysis
 
+---
+
 ## Heatmaps
 
 The largest result of our analysis was a comparison of the air quality in Charlottesville before and after the announcement by UVA that classes would move online. We used this as a breakpoint for the beginning of social distancing in Charlottesville. Using data from our sensors we were able to visualize the decrease in CO2 levels across Charlottesville.
@@ -90,6 +100,8 @@ Along with heatmaps for the change in CO2, we were able to generate general heat
 _Average PM2.5 (ug/m3) February 03 to April 15 2020_
 
 # Related Projects
+
+---
 
 ### [Air Quality Egg](https://airqualityegg.com/home)
 
@@ -110,6 +122,8 @@ _Average PM2.5 (ug/m3) February 03 to April 15 2020_
 ### [The Air Quality Data Commons](https://aqdatacommons.org/)
 
 # Team
+
+---
 
 ## James Howerton
 
