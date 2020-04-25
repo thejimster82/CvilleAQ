@@ -197,9 +197,9 @@ _Community Climate Collaborative (C3) Director of Climate Policy Caetano de Camp
 
 ### **James Howerton**
 
-_UVA School of Data Science_
-
 ![Jimmy Howerton](assets/img/contact/JH-small.png)
+
+_UVA School of Data Science_
 
 email: **jh3df@virginia.edu**
 
@@ -209,9 +209,9 @@ email: **jh3df@virginia.edu**
 
 ### **Ben Schenck**
 
-_UVA School of Data Science_
-
 ![Ben Schenck](assets/img/contact/BSchenck-small.png)
+
+_UVA School of Data Science_
 
 email: **bls7cc@virginia.edu**
 
@@ -221,26 +221,26 @@ email: **bls7cc@virginia.edu**
 
 ### **Jon Kropko**
 
-_UVA School of Data Science_
-
 ![Jon Kropko](assets/img/contact/JK-small.png)
+
+_UVA School of Data Science_
 
 ### **Luis Felipe Rosado Murillo**
 
-_UVA School of Data Science_
-
 ![Luis Felipe Rosado Murillo](assets/img/contact/LFR-small.png)
+
+_UVA School of Data Science_
 
 ## Sponsors
 
 ### **Lucas Ames**
 
-_Smart Cville_
-
 ![Lucas Ames](assets/img/contact/lucas_ames.jpg)
+
+_Smart Cville_
 
 ### **Jon Goodall**
 
-_UVA Link Lab_
-
 ![Jon Goodall](assets/img/contact/JGoodall-small.png)
+
+_UVA Link Lab_
