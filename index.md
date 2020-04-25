@@ -106,7 +106,7 @@ Find the code for the below analyses in the [notebooks](https://github.com/theji
 
 ## Data Cleaning
 
-Our sensors operate only within certain bounds (these can be found on their respective datasheets) and we know Charlottesville's weather well enough to rule out specific conditions. Beyond this, we knew that sensors that were malfunctioning would report consistent values or linearly-varying values over long periods of time. Using these two considerations, we were able to construct a simple data-cleaning strategy that removes data that is out-of-bounds and that is behaving linearly for an extended period of time. After performing the data removal we were able to visualize which box had issues with which metrics through a heatmap, shown below. From this we can see that most of our boxes had issues with the PMS7003, and a few had issues with the SCD30. This type of visual might allow us to detect particularly problematic boxes in the future and to go into the debugging process with some level of insight as to where the problem lies. We found that ~25% of our incoming readings were invalid and ~50% our rows included at least one invalid reading. Our further analyses remove all rows with **any** invalid metrics.
+Our sensors operate only within certain bounds (these can be found on their respective datasheets) and we know Charlottesville's weather well enough to rule out specific conditions. Beyond this, we knew that sensors that were malfunctioning would report consistent values or linearly-varying values over long periods of time. Using these two considerations, we were able to construct a simple data-cleaning strategy that removes data that is out-of-bounds and that is behaving linearly for an extended period of time. After performing the data removal we were able to visualize which kit had issues with which metrics through a heatmap, shown below. From this we can see that most of our kits had issues with the PMS7003, and a few had issues with the SCD30. This type of visual might allow us to detect particularly problematic kits in the future and to go into the debugging process with some level of insight as to where the problem lies. We found that ~25% of our incoming readings were invalid and ~50% our rows included at least one invalid reading. Our further analyses remove all rows with **any** invalid metrics.
 
 ![invalid data heatmap](assets/img/analysis/invalid.png)
 
@@ -114,7 +114,7 @@ _Percent invalid data by metric and by kit, 'rows' indicates percent of rows tha
 
 ## Calibration
 
-Our sensor kits were not placed close enough to reference-grade instruments to perform collocation testing. However, all PMS7003 units are pre-calibrated and [it has been shown](https://www.researchgate.net/publication/327162626_Field_evaluation_of_low-cost_particulate_matter_sensors_in_high-_and_low-concentration_environments) that this procedure succeeds in keeping their readings close to reference instrumentation. Furthermore, [it has been shown](https://link.springer.com/article/10.1007/s42452-019-0630-1) that the coefficient of variation between units is below 10%. We took the EPA's reported PM2.5 data from Charlottesville and compared it to our sensor values and saw that, in aggregate, the difference between their readings fit a normal distribution with mean ~4.3ug/m3 and standard deviation ~2.1ug/m3. We did not adjust our readings for our further analyses as assigning blame for the discrepancies to each individual box was not possible because our boxes and the reference instrument were not collocated.
+Our sensor kits were not placed close enough to reference-grade instruments to perform collocation testing. However, all PMS7003 units are pre-calibrated and [it has been shown](https://www.researchgate.net/publication/327162626_Field_evaluation_of_low-cost_particulate_matter_sensors_in_high-_and_low-concentration_environments) that this procedure succeeds in keeping their readings close to reference instrumentation. Furthermore, [it has been shown](https://link.springer.com/article/10.1007/s42452-019-0630-1) that the coefficient of variation between units is below 10%. We took the EPA's reported PM2.5 data from Charlottesville and compared it to our sensor values and saw that, in aggregate, the difference between their readings fit a normal distribution with mean ~4.3ug/m3 and standard deviation ~2.1ug/m3. We did not adjust our readings for our further analyses as assigning blame for the discrepancies to each individual kit was not possible because our kits and the reference instrument were not collocated.
 
 ![PMS7003 Calibration Test](assets/img/analysis/calibration.png)
 
@@ -131,6 +131,14 @@ After cleaning our data we used an isolation forest on our five metrics: CO2, PM
 ![Anomaly count per sensor kit](assets/img/analysis/anomalies.png)
 
 _Anomaly count per sensor kit_
+
+## Distance Correlation
+
+Having sensors spread throughout an area, we would expect their readings to be more similar when they are closer together. We can test this assumption by finding the correlation between the set of readings from each kit with each other kit and plotting it against the distance between those kits. This is pictured below for PM10 ([similar results](https://github.com/thejimster82/CvilleAQ/tree/master/assets/img/analysis) were found for PM2.5 and CO2) and, as you can see, our assumption is not verified. We believe that this is because air quality variations can be highly localized, especially in an urban environment. We believe that this indicates that a higher density of air quality sensing kits is necessary in order to capture all of the meaningful information within the environment. This could be tested in future research to determine a standardized average distance for placing air quality sensors in an urban environment.
+
+![PM10 Distance Correlation Plot](assets/img/analysis/pm10_dist.png)
+
+_PM10 Distance Correlation Plot, R2=0.004_
 
 ## Heatmaps
 
