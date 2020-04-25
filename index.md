@@ -189,22 +189,46 @@ _Community Climate Collaborative (C3) Director of Climate Policy Caetano de Camp
 
 ### [The Air Quality Data Commons](https://aqdatacommons.org/)
 
-# Team
+# The Team
 
 ---
 
-## James Howerton
+## Researchers
 
-![Jimmy Howerton](assets/img/contact/HowertonJ.jpg)
+### **James Howerton** - UVA School of Data Science
+
+![Jimmy Howerton](assets/img/contact/JH-small.png)
+
 email: **jh3df@virginia.edu**
 
 [LinkedIn](https://www.linkedin.com/in/james-howerton/)
 
 [Resume](https://www.jameshowerton.dev)
 
-## Ben Schenck
+### **Ben Schenck** - UVA School of Data Science
 
-![Ben Schenck](assets/img/contact/SchenkB.jpg)
+![Ben Schenck](assets/img/contact/BSchenck-small.png)
+
 email: **bls7cc@virginia.edu**
 
 [LinkedIn](https://www.linkedin.com/in/benjamin-schenck-a08248141/)
+
+## Mentors
+
+### **Jon Kropko** - UVA School of Data Science
+
+![Jon Kropko](assets/img/contact/JK-small.png)
+
+### **Luis Felipe Rosado Murillo** - UVA School of Data Science
+
+![Luis Felipe Rosado Murillo](assets/img/contact/LFR-small.png)
+
+## Sponsors
+
+### **Lucas Ames** - Smart Cville
+
+![Lucas Ames](assets/img/contact/lucas_ames.jpg)
+
+### **Jon Goodall** - UVA Link Lab
+
+![Jon Goodall](assets/img/contact/JGoodall-small.png)
