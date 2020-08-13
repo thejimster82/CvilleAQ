@@ -4,7 +4,8 @@ layout: default
 
 ![IoT For Public Good](/assets/img/IoT.png)
 
-View the full paper on [IEEExplore](https://ieeexplore.ieee.org/Xplore/home.jsp)
+View the full paper on [IEEExplore](https://ieeexplore.ieee.org/document/9106676)
+
 or read the [pre-print](The_Deployment_of_a_LoRaWAN-Based_IoT_Air_Quality_Sensor_Network_for_Public_Good.pdf)
 _This link will be updated when the official paper is published_
 
