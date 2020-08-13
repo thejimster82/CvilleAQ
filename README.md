@@ -7,7 +7,6 @@ layout: default
 View the full paper on [IEEExplore](https://ieeexplore.ieee.org/document/9106676)
 
 or read the [pre-print](The_Deployment_of_a_LoRaWAN-Based_IoT_Air_Quality_Sensor_Network_for_Public_Good.pdf)
-_This link will be updated when the official paper is published_
 
 # Overview
 
